@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Section_01", "Section_01\Section_01.csproj", "{2D1A1615-33B5-4B23-831F-17C4279E7BC6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Section_02", "Section_02\Section_02.csproj", "{7A8B5A32-937C-4625-AA72-54E718128700}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Section_controller", "Section_02\Section_controller.csproj", "{7A8B5A32-937C-4625-AA72-54E718128700}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Section_03", "Section_3\Section_03.csproj", "{E1AC59E1-6E9D-4C67-9D28-CD6DBD941D1E}"
 EndProject
