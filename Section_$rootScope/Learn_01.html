@@ -1,0 +1,17 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Learn_01</title>
+    <script src="Scripts/angular.min.js"></script>
+</head>
+<body ng-app="myApp">
+    <p>{{FullName}}</p>
+
+    <script>
+        angular.module('myApp', [])
+        .run(function ($rootScope) {
+            $rootScope.FullName = 'Mehdi Ghadimi';
+        });
+    </script>
+</body>
+</html>

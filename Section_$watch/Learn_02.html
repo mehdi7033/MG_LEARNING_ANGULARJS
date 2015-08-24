@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Learn_02</title>
+    <script src="Scripts/angular.min.js"></script>
+    <script>
+        angular.module('myApp', [])
+        .controller('myCtrl', function ($scope) {
+            $scope.myVar = 'Salam';
+
+            $scope.fun1 = function () {
+                $scope.myVar = "Mehdi";
+            };
+
+            $scope.showMyVar = function () {
+                alert($scope.myVar);
+            }
+
+            $scope.$watch('myVar', function (newVal, oldVal) {
+                if (newVal != oldVal) {
+                    alert(newVal);
+                }
+            });
+           
+        });
+    </script>
+</head>
+<body ng-app="myApp">
+    <div ng-controller="myCtrl">
+        <p>
+            <input type="text" ng-model="myVar" />
+        </p>
+        <p>
+            <input type="button" value="Set myVar" ng-click="fun1()"/>
+        </p>
+        <p>
+            <input type="button" value="show MyVar" ng-click="showMyVar()" />
+        </p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Learn_02</title>
+    <script src="Scripts/angular.min.js"></script>
+</head>
+<body ng-app="myApp">
+    <p>{{FullName}}</p>
+    <div ng-controller="myCtrl">
+        <h1>{{msg}}</h1>
+    </div>
+
+    <script>
+        angular.module('myApp', [])
+        .run(function ($rootScope) {
+            $rootScope.FullName = 'Mehdi Ghadimi';
+        })
+        .controller('myCtrl', function ($scope, $rootScope) {
+            $scope.msg = 'Salam , ' + $rootScope.FullName;
+        });
+    </script>
+</body>
+</html>

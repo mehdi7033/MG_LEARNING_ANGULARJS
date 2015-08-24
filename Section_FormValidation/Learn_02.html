@@ -1,0 +1,38 @@
+﻿
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Learn_01</title>
+    <script src="Scripts/angular.min.js"></script>
+    <script>
+        angular.module('app1', [])
+        .controller('MyCtrl', function ($scope) {
+            $scope.showMsg = function () {
+                debugger;
+            };
+        });
+    </script>
+</head>
+<body ng-app="app1">
+
+    <h3>Form Validation</h3>
+
+    <form novalidate name="myForm" ng-controller="MyCtrl">
+        <p>
+            <label for="FirstName">FirstName :</label>
+            <input type="text" name="FirstName" ng-model="FirstName" required placeholder="Email Address" />
+            <span style="color:red;" ng-show="myForm.FirstName.$error.required">FirstName is required.</span>
+        </p>
+
+        <p>
+            <label for="LastName">LastName :</label>
+            <input type="text" name="LastName" ng-model="LastName" required />
+            <span style="color:red;" ng-show="myForm.LastName.$error.required">LastName is required.</span>
+        </p>
+
+        <p>
+            <button type="submit">show message</button>
+        </p>
+    </form>
+</body>
+</html>

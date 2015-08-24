@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Learn_09</title>
+    <script src="Scripts/angular.min.js"></script>
+</head>
+<body ng-app="mainApp" ng-controller="myController">
+    <select ng-model="selectedCity">
+        <option ng-repeat="c in cityList">{{c}}</option>
+    </select>
+
+
+    <script type="text/javascript">
+        angular.module('mainApp', [])
+        .controller('myController', function ($scope) {
+            $scope.cityList = ['teh', 'arak', 'ahvaz'];
+            $scope.selectedCity = 'teh';
+        });
+    </script>
+</body>
+</html>

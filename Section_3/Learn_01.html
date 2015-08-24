@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Learn_01</title>
+    <script src="Scripts/angular.min.js"></script>
+    <script type="text/javascript">
+        var app1 = angular.module('app1', [])
+            .filter('makeUpperCase', function () {
+                return function (txt) {
+                    return txt.toUpperCase();
+                };
+            })
+            .filter('reverse', function () {
+            return function (text) {
+                return text.split("").reverse().join("");
+            }
+        });
+    </script>
+</head>
+<body ng-app="app1">
+    <div>
+        {{'salam' | makeUpperCase | reverse}}
+    </div>
+</body>
+</html>

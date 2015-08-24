@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Learn_01</title>
+    <script src="Scripts/angular.js"></script>
+
+</head>
+<body ng-app="">
+    <div ng-controller="customersCtrl">
+        <ul>
+            <li ng-repeat="x in names">
+                {{x.Name + ", " + x.Country}}
+            </li>
+        </ul>
+    </div>
+    <script>
+        function customersCtrl($scope, $http) {
+            $http.get("http://www.w3schools.com/angular/customers11.php")
+            .success(function (data, status, headers, config) {
+                $scope.names = data.records;
+            })
+            .error(function (data, status, headers, config) {
+                alert('ERROR');
+            });
+        }
+    </script>
+</body>
+</html>

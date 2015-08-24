@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Learn_00</title>
+    <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/angular-route.js"></script>
+</head>
+<body ng-app="myApp">
+    <div ng-view></div>
+
+    <script type="text/javascript">
+        angular.module('myApp', ['ngRoute'])
+        .config(function ($routeProvider) {
+            $routeProvider
+                .when('/', {
+                    template: '<h1>Hi hi</h1>'
+                });
+        });
+
+    </script>
+</body>
+</html>

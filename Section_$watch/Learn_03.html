@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Learn_03</title>
+    <meta charset="utf-8" />
+    <script src="Scripts/angular.min.js"></script>
+    <script>
+        angular.module('myApp', [])
+        .controller('myCtrl', function ($scope) {
+            $scope.FullName = 'Mehdi';
+            $scope.$watch('FullName', function (newVal, oldVal) {
+                alert(newVal);
+            });
+        })
+    </script>
+</head>
+<body ng-app="myApp">
+    <div ng-controller="myCtrl">
+        <input type="text" ng-model="FullName" />
+    </div>
+</body>
+</html>

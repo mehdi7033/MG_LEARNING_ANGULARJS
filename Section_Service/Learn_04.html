@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Learn_01 register service as factory</title>
+    <script src="Scripts/angular.js"></script>
+    <script>
+        var app = angular.module('myApp', [])
+        .constant('appName', 'Sajat')
+        .controller('myCtrl', function ($scope, appName) {
+            $scope.showAppName = function(){
+                alert(appName);
+            };
+        });
+    </script>
+</head>
+<body ng-app="myApp">
+    <div ng-controller="myCtrl">
+        <p>
+            <input type="button" value="show application name" ng-click="showAppName()" />
+        </p>
+    </div>
+</body>
+</html>

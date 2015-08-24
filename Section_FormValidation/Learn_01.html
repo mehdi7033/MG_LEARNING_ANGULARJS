@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Learn_01</title>
+    <script src="Scripts/angular.min.js"></script>
+    <script>
+        /*
+        function showMsg() {
+            alert(window.myForm.FirstName.value);
+        }*/
+
+        function showMsg() {
+            
+            alert(myForm.FirstName.value);
+        }
+
+    </script>
+</head>
+<body>
+    <form name="myForm">
+        <span>Firstname</span>:
+        <input type="text" name="FirstName" />
+        <br />
+        <span>Lastname</span>:
+        <input type="text" name="LastName" />
+        <br />
+        <br />
+        <button onclick="showMsg()">show message</button>
+    </form>
+</body>
+</html>

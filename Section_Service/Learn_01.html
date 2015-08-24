@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Learn_01 register service as factory</title>
+    <script src="Scripts/angular.js"></script>
+    <script>
+        var app = angular.module('myApp', [])
+        .factory('UserService', function () {
+            var current_user;
+            return {
+                getCurrentUser: function () {
+                    return current_user;
+                },
+                setCurrentUser: function (user) {
+                    current_user = user;
+                }
+            };
+        }).
+        controller('myCtrl', function ($scope, UserService) {
+            $scope.setUser = function () {
+                UserService.setCurrentUser($scope.user);
+            };
+            $scope.getUser= function(){
+                alert(UserService.getCurrentUser());
+            }
+        });
+    </script>
+</head>
+<body ng-app="myApp">
+    <div ng-controller="myCtrl">
+        <p>
+            <input type="text" ng-model="user" />
+        </p>
+        <p>
+            <input type="button" value="Get Current User" ng-click="getUser()"/>
+        </p>
+        <p>
+            <input type="button" value="Set Current User" ng-click="setUser()" />
+        </p>
+    </div>
+</body>
+</html>

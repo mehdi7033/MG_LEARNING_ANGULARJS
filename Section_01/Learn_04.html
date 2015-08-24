@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Learn_04</title>
+    <script src="Scripts/angular.min.js"></script>
+</head>
+<body ng-app="module1">
+    <div ng-controller="myController">
+        <input type="text" ng-model="Fname"></input>
+    </div>
+
+
+
+
+    <script type="text/javascript">
+        var module1 = angular.module('module1', []);
+        module1.controller('myController', function ($scope) {
+            $scope.Fname = 'Mehdi';
+        });
+    </script>
+</body>
+</html>

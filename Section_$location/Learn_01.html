@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Learn_01</title>
+	<meta charset="utf-8" />
+    <script src="Scripts/angular.js"></script>
+    <script>
+        angular.module('myApp', [])
+        .controller('myCtrl', function ($scope, $location) {
+            $scope.showLocation = function () {
+                var l = $location.absUrl();
+                alert(l);
+            }
+        });
+    </script>
+</head>
+<body ng-app="myApp">
+    <div ng-controller="myCtrl">
+        <input type="button" ng-click="showLocation()" value="show Location"/>
+    </div>
+</body>
+</html>

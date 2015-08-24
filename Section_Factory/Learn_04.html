@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Learn_04</title>
+    <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/angular-route.js"></script>
+</head>
+<body ng-app="myApp">
+    <p>
+        <a href="#/home">home</a>
+    </p>
+    <p>
+        <a href="#/about">about</a>
+    </p>
+    <div ng-view></div>
+
+    <script type="text/javascript">
+        angular.module('myApp', ['ngRoute'])
+        .config(function ($routeProvider) {
+            $routeProvider
+                .when('/home', {
+                    templateUrl: 'views/home.html'
+                })
+                .when('/about', {
+                    templateUrl: 'views/about.html', controller: 'aboutCtrl'})
+        })
+        .controller('aboutCtrl', function ($scope, $route) {
+            $scope.FullName = 'Mehdi';
+            $scope.$on('$locationChangeSuccess', function (event) {
+                alert($route.current.originalPath);
+            })
+            });
+
+    </script>
+</body>
+</html>

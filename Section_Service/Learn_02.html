@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Learn_02 register service as service</title>
+    <script src="Scripts/angular.js"></script>
+    <script>
+
+        var app = angular.module('myApp', [])
+        .value('user', 'Salam')
+        .service('userService', function (user) {
+            this.user = user;
+            this.getCurrentUser = function () {
+                return this.user;
+            };
+            this.setCurrentUser = function (user) {
+                this.user = user;
+            };
+        })
+        .controller('myCtrl', function ($scope, userService) {
+            $scope.setUser = function () {
+                userService.setCurrentUser($scope.user);
+            };
+            $scope.getUser = function () {
+                alert(userService.getCurrentUser());
+            }
+        });
+    </script>
+</head>
+<body ng-app="myApp">
+    <div ng-controller="myCtrl">
+        <p>
+            <input type="text" ng-model="user" />
+        </p>
+        <p>
+            <input type="button" value="Get Current User" ng-click="getUser()" />
+        </p>
+        <p>
+            <input type="button" value="Set Current User" ng-click="setUser()" />
+        </p>
+    </div>
+</body>
+</html>

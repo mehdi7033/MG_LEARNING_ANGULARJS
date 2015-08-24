@@ -1,0 +1,12 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Learn_08</title>
+    <script src="Scripts/angular.min.js"></script>
+</head>
+<body ng-app ng-init="cityList=['teh', 'arak', 'ahvaz'];">
+    <select ng-model="selectedCity">
+        <option ng-repeat="c in cityList">{{c}}</option>
+    </select>
+</body>
+</html>
